@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Calculator</title>
+</head>
+<body>
+
+<h2>Task 3: Calculator Interface</h2>
+
+<label>Number 1: <input type="number" id="calcNum1"></label><br><br>
+<label>Number 2: <input type="number" id="calcNum2"></label><br><br>
+
+<button onclick="calculate('add')">Add</button>
+<button onclick="calculate('subtract')">Subtract</button>
+<button onclick="calculate('multiply')">Multiply</button>
+<button onclick="calculate('divide')">Divide</button>
+
+<p id="calcResult"></p>
+
+<script>
+  function calculate(operation) {
+    const num1 = parseFloat(document.getElementById("calcNum1").value);
+    const num2 = parseFloat(document.getElementById("calcNum2").value);
+    let result;
+
+    switch (operation) {
+      case 'add':
+        result = `${num1} + ${num2} = ${num1 + num2}`;
+        break;
+      case 'subtract':
+        result = `${num1} - ${num2} = ${num1 - num2}`;
+        break;
+      case 'multiply':
+        result = `${num1} × ${num2} = ${num1 * num2}`;
+        break;
+      case 'divide':
+        result = (num2 === 0) ? "Error: Cannot divide by zero." : `${num1} ÷ ${num2} = ${num1 / num2}`;
+        break;
+    }
+
+    document.getElementById("calcResult").textContent = result;
+  }
+</script>
+
+</body>
+</html>

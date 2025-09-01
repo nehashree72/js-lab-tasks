@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator - Task 1</title>
+</head>
+<body>
+
+<h2>Task 1: Addition & Subtraction</h2>
+
+<label>Number 1: <input type="number" id="num1"></label><br><br>
+<label>Number 2: <input type="number" id="num2"></label><br><br>
+
+<button onclick="add()">Add</button>
+<button onclick="subtract()">Subtract</button>
+
+<p id="output1"></p>
+
+<script>
+  function add() {
+    const a = parseFloat(document.getElementById("num1").value);
+    const b = parseFloat(document.getElementById("num2").value);
+    document.getElementById("output1").textContent = `Addition: ${a} + ${b} = ${a + b}`;
+  }
+
+  function subtract() {
+    const a = parseFloat(document.getElementById("num1").value);
+    const b = parseFloat(document.getElementById("num2").value);
+    document.getElementById("output1").textContent = `Subtraction: ${a} - ${b} = ${a - b}`;
+  }
+</script>
+
+</body>
+</html>
