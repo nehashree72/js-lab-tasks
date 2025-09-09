@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare User Input</title>
+</head>
+<body>
+
+<h2>Task 2: Compare Input with Predefined Number</h2>
+
+<p>Guess the number (between 1 and 100):</p>
+<input type="number" id="userInput" />
+<button onclick="checkGuess()">Check</button>
+<p id="result"></p>
+
+<script>
+  const secretNumber = 73; // predefined number
+
+  function checkGuess() {
+    const userGuess = parseInt(document.getElementById("userInput").value);
+    let message = "";
+
+    if (userGuess < secretNumber) {
+      message = "Too Low";
+    } else if (userGuess > secretNumber) {
+      message = "Too High";
+    } else {
+      message = "Correct!";
+    }
+
+    document.getElementById("result").textContent = message;
+  }
+</script>
+
+</body>
+</html>
