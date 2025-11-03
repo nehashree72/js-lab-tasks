@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2 - Data Types & Type Conversion</title>
+</head>
+<body>
+  <h1>Task 2: Data Types & Type Conversion</h1>
+  <p>Check the console for results.</p>
+
+<script>
+let num = 42; 
+let str = "123"; 
+let bool = true; 
+let n = null; 
+let undef; 
+let obj = { name: "Alice", age: 25 }; 
+let sym = Symbol("id");
+
+console.log("=== Data Types ===");
+console.log(typeof num, num);
+console.log(typeof str, str);
+console.log(typeof bool, bool);
+console.log(typeof n, n);
+console.log(typeof undef, undef);
+console.log(typeof obj, obj);
+console.log(typeof sym, sym);
+
+console.log("\n=== Type Conversion ===");
+
+let strToNum1 = Number(str);
+let strToNum2 = parseInt("50");
+console.log("String to Number:", strToNum1, typeof strToNum1);
+console.log("parseInt:", strToNum2, typeof strToNum2);
+
+let numToStr = String(num);
+console.log("Number to String:", numToStr, typeof numToStr);
+console.log("Boolean true ->", Number(true));
+console.log("Boolean false ->", Number(false));
+console.log("\n=== Implicit Conversion ===");
+console.log("'5' + 3 =", '5' + 3); // String concatenation
+console.log("'5' - 3 =", '5' - 3); // Numeric subtraction
+console.log("true + 1 =", true + 1);
+<script>
+</body>
+</html>
+console.log("false + 1 =", false + 1);
