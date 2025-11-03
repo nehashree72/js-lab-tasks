@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3 - Operators in JavaScript</title>
+</head>
+<body>
+  <h1>Task 3: Operators in JavaScript</h1>
+  <p>Open your console to see operator examples and outputs.</p>
+<script>
+console.log("=== Arithmetic Operators ===");
+let a = 10, b = 3;
+console.log("a + b =", a + b);
+console.log("a - b =", a - b);
+console.log("a * b =", a * b);
+console.log("a / b =", a / b);
+console.log("a % b =", a % b);
+
+console.log("\n=== Assignment Operators ===");
+let x = 5;
+x += 2; 
+console.log("x after += 2:", x);
+x -= 1;
+console.log("x after -= 1:", x);
+
+console.log("\n=== Relational Operators ===");
+console.log("a == '10':", a == '10'); 
+console.log("a === '10':", a === '10');
+console.log("a != b:", a != b);
+console.log("a !== b:", a !== b);
+console.log("a > b:", a > b);
+console.log("a < b:", a < b);
+console.log("a >= b:", a >= b);
+console.log("a <= b:", a <= b);
+
+console.log("\n=== Logical Operators ===");
+let c = true, d = false;
+console.log("c && d:", c && d);
+console.log("c || d:", c || d);
+console.log("!c:", !c);
+
+console.log("\n=== Conditional (Ternary) Operator ===");
+let age = 18;
+let canVote = (age >= 18) ? "Yes" : "No";
+console.log("Can vote?", canVote);
+
+console.log("\n=== Bitwise Operators ===");
+let bitA = 5; 
+let bitB = 3; 
+console.log("bitA & bitB =", bitA & bitB); 
+console.log("bitA | bitB =", bitA | bitB); 
+console.log("bitA ^ bitB =", bitA ^ bitB); 
+console.log("~bitA =", ~bitA); // NOT
+console.log("bitA << 1 =", bitA << 1); 
+console.log("bitA >> 1 =", bitA >> 1); 
+console.log("\n=== Increment & Decrement ===");
+let count = 5;
+console.log("count++ =", count++);
+console.log("After count++:", count);
+console.log("++count =", ++count); 
+console.log("count-- =", count--); 
+console.log("After count--:", count);
+</script>
+</body>
+</html>
+console.log("--count =", --count);
