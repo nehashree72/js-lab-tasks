@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 - Defining and Calling Functions</title>
+</head>
+<body>
+  <h1>Task 1: Defining and Calling Functions</h1>
+  <p>Open the browser console to view outputs.</p>
+
+  <script>
+console.log("=== Simple Functions with Fixed Parameters ===");
+
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+// Calling the functions
+greet("Alice");
+console.log("Sum of 5 and 3 =", add(5, 3));
+
+console.log("\n=== Function with Arbitrary Number of Arguments (using 'arguments') ===");
+
+function sumAll() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+
+console.log("Sum of (2, 4, 6, 8):", sumAll(2, 4, 6, 8));
+
+console.log("\n=== Function with Rest Operator ===");
+
+function multiplyAll(...numbers) {
+  return numbers.reduce((product, num) => product * num, 1);
+}
+console.log("Product of (2, 3, 4):", multiplyAll(2, 3, 4));
+</script>
+</body>
+</html>
+
+
+console.log("Product of (2, 3, 4):", multiplyAll(2, 3, 4));
