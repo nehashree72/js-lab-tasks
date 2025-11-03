@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 - Basic JavaScript Program</title>
+</head>
+<body>
+  <h1>Task 1: Basic JavaScript Program & Console</h1>
+  <p>Open the browser console to see the output (Ctrl + Shift + J or F12).</p>
+  
+  <script>
+  var name = "Alice";
+  let age = 25;
+  const country = "Canada";
+
+
+console.log("Hello, my name is " + name);
+console.log("I am " + age + " years old.");
+console.log("I live in " + country);
+
+name = "Bob";
+age = age + 1;
+
+console.log("After modifying variables:");
+console.log("Name:", name);
+console.log("Age:", age);
+console.log("Country (constant):", country);</script>
+</body>
+</html>
