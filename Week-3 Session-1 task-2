@@ -1,0 +1,48 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Objects and Methods</title>
+</head>
+<body>
+  <h2>Task 2: Working with Objects and Methods</h2>
+  <script>
+const student = {
+  name: "Alice",
+  age: 21,
+  course: "Computer Science",
+  displayInfo: function () {
+    console.log(`Name: ${this.name}, Age: ${this.age}, Course: ${this.course}`);
+  }
+};
+student.displayInfo();
+
+// Accessing and modifying properties
+student.age = 22;
+console.log("Updated age:", student.age);
+student.grade = "A";
+console.log("Added grade:", student.grade);
+student.greet = function () {
+  console.log(`Hello, my name is ${this.name}!`);
+};
+student.greet();
+
+const car = {
+  brand: "Toyota",
+  model: "Camry",
+  year: 2021,
+  start() {
+    console.log(`${this.brand} ${this.model} started.`);
+  },
+  updateYear(newYear) {
+    this.year = newYear;
+    console.log(`Updated year: ${this.year}`);
+  }
+};
+
+car.start();
+car.updateYear(2025);
+</script>
+</body>
+</html>
