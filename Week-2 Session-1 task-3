@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3 - Callback Functions & Scopes</title>
+</head>
+<body>
+  <h1>Task 3: Callback Functions & Scopes</h1>
+  <p>Open the console to view callback and scope demonstrations.</p>
+<script>
+console.log("=== Callback Function Example ===");
+function processData(data, callback) {
+  console.log("Processing data:", data);
+  callback(); 
+}
+
+function doneMessage() {
+  console.log("✅ Processing complete!");
+}
+processData("User Input", doneMessage);
+
+console.log("\n=== Callback Example 2: Using setTimeout (simulate async task) ===");
+
+function fetchData(callback) {
+  console.log("Fetching data...");
+  setTimeout(() => {
+    console.log("Data fetched!");
+    callback();
+  }, 1000);
+}
+
+fetchData(() => console.log("Callback executed after data fetch!"));
+
+console.log("\n=== Scope Demonstration ===");
+var globalVar = "I am global";
+
+function showScopes() {
+  var localVar = "I am local to the function";
+
+  if (true) {
+    // Block scope
+    let blockLet = "I am block-scoped (let)";
+    const blockConst = "I am block-scoped (const)";
+    console.log(blockLet);
+    console.log(blockConst);
+  }
+
+  console.log(globalVar);
+  console.log(localVar);
+  // console.log(blockLet);
+}
+
+showScopes();
+
+console.log("\n=== var vs let vs const in loops ===");
+
+for (var i = 0; i < 3; i++) {
+  // var is function-scoped
+  setTimeout(() => console.log("var i:", i), 100);
+}
+
+for (let j = 0; j < 3; j++) {
+  // let is block-scoped
+  setTimeout(() => console.log("let j:", j), 100);
+}
+</script>
+</body>
+</html>
+
+
