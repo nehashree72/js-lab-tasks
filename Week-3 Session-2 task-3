@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 2 - Task 3: Function Context & Advanced Calls</title>
+</head>
+<body>
+  <h2>Task 3: Function Context & Advanced Calls</h2>
+<script>
+function introduce(language1, language2) {
+  console.log(`Hi, I'm ${this.name}, and I code in ${language1} and ${language2}.`);
+}
+
+const developer = { name: "John" };
+introduce.call(developer, "JavaScript", "Python");
+
+introduce.apply(developer, ["C++", "Java"]);
+
+const person = {
+  name: "Alice",
+  greet: function (greeting) {
+    console.log(`${greeting}, I'm ${this.name}!`);
+  }
+};
+
+const anotherPerson = { name: "Bob" };
+person.greet.call(anotherPerson, "Hello");
+person.greet.apply(anotherPerson, ["Hi there"]);
+
+const boundGreet = person.greet.bind(anotherPerson, "Good morning");
+boundGreet();
+</script>
+</body>
+</html>
