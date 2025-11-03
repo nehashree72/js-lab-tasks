@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Object Destructuring and Spread</title>
+</head>
+<body>
+  <h2>Task 3: Object Destructuring and Spread</h2>
+<script>
+const person = { name: "John", age: 30, city: "New York" };
+const { name, age } = person;
+console.log(`Name: ${name}, Age: ${age}`);
+const { country = "USA" } = person;
+console.log("Country:", country);
+const student = {
+  fullName: "Emma Watson",
+  address: {
+    city: "London",
+    zip: "E1 6AN"
+  }
+};
+const { address: { city, zip } } = student;
+console.log(`City: ${city}, ZIP: ${zip}`);
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+
+const clonedObj = { ...obj1 };
+const mergedObj = { ...obj1, ...obj2 };
+
+console.log("Cloned Object:", clonedObj);
+console.log("Merged Object:", mergedObj);
+const updatedPerson = { ...person, age: 31, city: "Los Angeles" };
+console.log("Updated Person:", updatedPerson);
+</script>
+</body>
+</html>
