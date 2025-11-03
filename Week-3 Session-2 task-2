@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 2 - Task 2: Complex Data & Parameter Handling</title>
+</head>
+<body>
+  <h2>Task 2: Complex Data & Parameter Handling</h2>
+<script>
+const products = [
+  { id: 1, name: "Laptop", price: 1200, specs: { brand: "Dell", RAM: "16GB" } },
+  { id: 2, name: "Phone", price: 800, specs: { brand: "Samsung", RAM: "8GB" } },
+  { id: 3, name: "Tablet", price: 600, specs: { brand: "Apple", RAM: "4GB" } }
+];
+products.forEach(p => {
+  console.log(`${p.name} (${p.specs.brand}) - $${p.price}`);
+});
+
+function sumAll(...numbers) {
+  return numbers.reduce((total, n) => total + n, 0);
+}
+console.log("Sum using rest parameters:", sumAll(5, 10, 15, 20));
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5];
+const combined = [...arr1, ...arr2];
+console.log("Combined array:", combined);
+
+const original = { a: 10, b: 20 };
+const clone = { ...original, c: 30 };
+console.log("Cloned object:", clone);
+
+function showUser({ name, age, address: { city } }) {
+  console.log(`User: ${name}, Age: ${age}, City: ${city}`);
+}
+showUser({
+  name: "Emma",
+  age: 27,
+  address: { city: "Paris", zip: "75001" }
+});
+</script>
+</body>
+</html>
