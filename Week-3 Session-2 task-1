@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 2 - Task 1: Destructuring, Notation & Iteration</title>
+</head>
+<body>
+  <h2>Task 1: Destructuring, Notation & Iteration</h2>
+<script>
+const colors = ["red", "green", "blue", "yellow"];
+const [first, second, ...restColors] = colors;
+console.log("First:", first);
+console.log("Second:", second);
+console.log("Rest of colors:", restColors);
+
+const user = {
+  name: "Alice",
+  age: 25,
+  address: {
+    city: "London",
+    zip: "E1 7AB"
+  }
+};
+
+const { name, age, address: { city, zip } } = user;
+console.log(`Name: ${name}, Age: ${age}, City: ${city}, ZIP: ${zip}`);
+
+console.log("User name (dot):", user.name);
+console.log("User age (bracket):", user["age"]);
+
+const car = { brand: "Tesla", model: "Model 3", year: 2024 };
+
+console.log("\nUsing for...in:");
+for (let key in car) {
+  console.log(`${key}: ${car[key]}`);
+}
+
+console.log("\nUsing Object.keys():");
+Object.keys(car).forEach(key => console.log(key));
+
+console.log("\nUsing Object.values():");
+Object.values(car).forEach(value => console.log(value));
+
+console.log("\nUsing Object.entries():");
+Object.entries(car).forEach(([key, value]) => console.log(`${key}: ${value}`));
+</script>
+</body>
+</html>
