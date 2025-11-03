@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 - Conditional Statements</title>
+</head>
+<body>
+  <h1>Task 1: Conditional Statements Practice</h1>
+  <p>Open the console to see the results (Ctrl + Shift + J or F12).</p>
+<script>
+console.log("=== Simple if statement ===");
+let temperature = 30;
+if (temperature > 25) {
+  console.log("It's a hot day!");
+}
+
+console.log("\n=== if-else block ===");
+let score = 65;
+if (score >= 50) {
+  console.log("You passed the test!");
+} else {
+  console.log("You failed the test!");
+}
+
+console.log("\n=== Multiple conditions with else-if ===");
+let marks = 85;
+if (marks >= 90) {
+  console.log("Grade: A");
+} else if (marks >= 75) {
+  console.log("Grade: B");
+} else if (marks >= 60) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+console.log("\n=== Switch statement example ===");
+let dayNumber = 3;
+let dayName;
+
+switch (dayNumber) {
+  case 1:
+    dayName = "Monday";
+    break;
+  case 2:
+    dayName = "Tuesday";
+    break;
+  case 3:
+    dayName = "Wednesday";
+    break;
+  case 4:
+    dayName = "Thursday";
+    break;
+  case 5:
+    dayName = "Friday";
+    break;
+  case 6:
+    dayName = "Saturday";
+    break;
+  case 7:
+    dayName = "Sunday";
+    break;
+  default:
+    dayName = "Invalid day number!";
+}
+
+console.log("Day " + dayNumber + " is " + dayName);
+</script>
+</body>
+</html>
