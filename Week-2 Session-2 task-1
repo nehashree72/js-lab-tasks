@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Advanced Array Methods</title>
+</head>
+<body>
+  <h2>Task 1: Advanced Array Methods</h2>
+  <script src="task1.js<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Advanced Array Methods</title>
+</head>
+<body>
+  <h2>Task 1: Advanced Array Methods</h2>
+<script>
+const sum = numbers.reduce((acc, val) => acc + val, 0);
+const product = numbers.reduce((acc, val) => acc * val, 1);
+console.log("Sum:", sum);
+console.log("Product:", product);
+
+const words = ["JavaScript", "is", "awesome"];
+const sentence = words.reduce((acc, word) => acc + " " + word);
+console.log("Sentence:", sentence);
+
+const sliced = numbers.slice(1, 4);
+console.log("Sliced portion:", sliced);
+console.log("Original array (unchanged):", numbers);
+
+const fruits = ["Apple", "Banana", "Cherry", "Mango"];
+fruits.splice(2, 1, "Orange", "Grapes"); // remove 1 element and add 2
+console.log("After splice:", fruits);
+
+const clonedArray = [...numbers];
+const moreNumbers = [100, 200, 300];
+const mergedArray = [...numbers, ...moreNumbers];
+console.log("Cloned Array:", clonedArray);
+console.log("Merged Array:", mergedArray);
+</script>
+</body>
+</html>
