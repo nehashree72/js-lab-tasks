@@ -17,13 +17,11 @@ while (i <= 10) {
 }
 
 console.log("\n=== do-while loop: prompt until correct input ===");
-// In a browser environment, you could use `prompt()`.
-// For demonstration here, we simulate user input:
 let userInput;
 let correctPassword = "abc123";
 let attempts = 0;
 do {
-  userInput = attempts === 2 ? "abc123" : "wrong"; // Simulated attempts
+  userInput = attempts === 2 ? "abc123" : "wrong"; 
   console.log("Attempt:", attempts + 1, "Input:", userInput);
   attempts++;
 } while (userInput !== correctPassword && attempts < 3);
