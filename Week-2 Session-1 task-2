@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2 - Function Expressions & Arrow Functions</title>
+</head>
+<body>
+  <h1>Task 2: Function Expressions & Arrow Functions</h1>
+  <p>Check the console for output and comparisons.</p>
+
+<script>
+console.log("=== Traditional Function Declarations ===");
+
+function square(num) {
+  return num * num;
+}
+console.log("Square of 4:", square(4));
+
+console.log("\n=== Function Expression ===");
+const cube = function(num) {
+  return num * num * num;
+};
+console.log("Cube of 3:", cube(3));
+
+console.log("\n=== Arrow Function Version ===");
+const squareArrow = (num) => num * num;
+console.log("Square (arrow) of 5:", squareArrow(5));
+
+const add = (a, b) => a + b;
+console.log("Add (arrow):", add(7, 8));
+
+console.log("\n=== Arrow Function with No Parameters ===");
+const greet = () => console.log("Hello from an arrow function!");
+greet();
+
+console.log("\n=== 'this' Behavior Example ===");
+const objTraditional = {
+  value: 10,
+  showThisTraditional: function() {
+    console.log("Traditional function 'this':", this.value);
+  },
+  showThisArrow: () => {
+    // Arrow functions don’t have their own `this`
+    console.log("Arrow function 'this':", this.value);
+  }
+};
+
+objTraditional.showThisTraditional();
+objTraditional.showThisArrow();
+</script>
+</body>
+</html>
