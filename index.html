@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input, select {
+      flex: 1 1 180px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    #report, #totalSalary {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Management System</h1>
+
+    <!-- Add Employee Form -->
+    <h2>Add / Update Employee</h2>
+    <form id="employeeForm">
+      <input type="number" id="empId" placeholder="Employee ID" required />
+      <input type="text" id="empName" placeholder="Name" required />
+      <input type="text" id="empPosition" placeholder="Position" required />
+      <input type="number" id="empSalary" placeholder="Salary" required />
+      <input type="text" id="empDept" placeholder="Department" required />
+      <select id="empAvailability">
+        <option value="true">Available</option>
+        <option value="false">Not Available</option>
+      </select>
+      <button type="submit">Add / Update Employee</button>
+    </form>
+
+    <!-- Search Employee -->
+    <h2>Search Employee</h2>
+    <input type="text" id="searchInput" placeholder="Search by name..." />
+    <button id="searchBtn">Search</button>
+
+    <!-- Sort Employees -->
+    <h2>Sort Employees by Salary</h2>
+    <button id="sortAsc">Sort Ascending</button>
+    <button id="sortDesc">Sort Descending</button>
+
+    <!-- Employee Table -->
+    <h2>Employee List</h2>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Salary</th>
+          <th>Department</th>
+          <th>Availability</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Employee rows will appear here dynamically -->
+      </tbody>
+    </table>
+
+    <!-- Reports -->
+    <div id="totalSalary">Total Salary of Available Employees: $0</div>
+    <div id="report">Department-wise Salary Report:</div>
+  </div>
+
+  <!-- Link JavaScript File -->
+  <script>
+      let employees = [];
+
+const form = document.getElementById("employeeForm");
+const table = document.querySelector("#employeeTable tbody");
+const searchInput = document.getElementById("searchInput");
+const totalSalaryDisplay = document.getElementById("totalSalary");
+
+// Add Employee
+form.addEventListener("submit", e => {
+  e.preventDefault();
+
+  let emp = {
+    id: +document.getElementById("empId").value,
+    name: document.getElementById("empName").value,
+    position: document.getElementById("empPosition").value,
+    salary: +document.getElementById("empSalary").value,
+    department: document.getElementById("empDept").value,
+    availability: document.getElementById("empAvailability").value === "true"
+  };
+
+  // Update if exists
+  let index = employees.findIndex(e => e.id === emp.id);
+  if (index >= 0) employees[index] = emp;
+  else employees.push(emp);
+
+  form.reset();
+  display();
+});
+
+// Display Employees
+function display(list = employees) {
+  table.innerHTML = list.map(e => `
+    <tr>
+      <td>${e.id}</td>
+      <td>${e.name}</td>
+      <td>${e.position}</td>
+      <td>$${e.salary}</td>
+      <td>${e.department}</td>
+      <td>${e.availability ? "Available" : "Not Available"}</td>
+      <td><button onclick="removeEmp(${e.id})">Remove</button></td>
+    </tr>`).join("");
+
+  let total = employees.filter(e => e.availability)
+                       .reduce((sum, e) => sum + e.salary, 0);
+  totalSalaryDisplay.textContent = `Total Salary of Available Employees: $${total}`;
+}
+
+// Remove Employee
+function removeEmp(id) {
+  employees = employees.filter(e => e.id !== id);
+  display();
+}
+
+// Search by Name
+document.getElementById("searchBtn").addEventListener("click", () => {
+  let q = searchInput.value.toLowerCase();
+  let filtered = employees.filter(e => e.name.toLowerCase().includes(q));
+  display(filtered);
+});
+  </script>
+</body>
+</html>
